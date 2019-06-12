@@ -1,6 +1,7 @@
-namespace TourOfHeroesServer.Models
+namespace TourOfHeroesServer
 
 [<CLIMutable>]
-type Message = {
-    Text : string
+type Hero = {
+    Id : int
+    Name : string
 }

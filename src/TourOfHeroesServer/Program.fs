@@ -11,12 +11,20 @@ open TourOfHeroesServer.HttpHandlers
 
 let webApp =
     choose [
-        subRoute "/api"
-            (choose [
-                GET >=> choose [
-                    route "/hello" >=> handleGetHello
-                ]
-            ])
+        GET >=> choose [
+            routex "/heroes" >=> handleGetHeroes
+            routex "/heroes/" >=> handleGetHeroSearch
+            routef "/heroes/%i" handleGetHero
+        ]
+        PUT >=> choose [
+            route "/heroes" >=> handlePutHero
+        ]
+        POST >=> choose [
+            route "/heroes" >=> handlePostHero
+        ]
+        DELETE >=> choose [
+            routef "/heroes/%i" handleDeleteHero
+        ]
         setStatusCode 404 >=> text "Not Found"
     ]
 
