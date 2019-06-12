@@ -37,9 +37,9 @@ let configureApp (app : IApplicationBuilder) =
         if env.IsDevelopment() then
             app.UseDeveloperExceptionPage()
         else
-            app.UseGiraffeErrorHandler errorHandler
-    app.UseHttpsRedirection()
-       .UseCors(configureCors)
+            app.UseHttpsRedirection()
+               .UseGiraffeErrorHandler errorHandler
+    app.UseCors(configureCors)
        .UseGiraffe(webApp)
 
 let configureServices (services : IServiceCollection) =
