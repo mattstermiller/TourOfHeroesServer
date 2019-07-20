@@ -9,5 +9,6 @@ dotnet run -p src/TourOfHeroesServer
 ```
 
 After the application has started, the API will respond to requests at
-[http://localhost:5000/api](http://localhost:5000/api) and
-[https://localhost:5001/api](https://localhost:5001/api).
+[http://localhost:5000/heroes](http://localhost:5000/heroes) and
+[https://localhost:5001/heroes](https://localhost:5001/heroes).
+It allows requests from http://localhost:4200 and http://localhost:3000.
